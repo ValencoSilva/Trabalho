@@ -10,11 +10,14 @@ public class Arma : MonoBehaviour
     public float forca;
     public GameObject marca;
     public float cadencia;
+    public int dano;
     void Start()
     {
         centro = new Vector2(Screen.width/2, Screen.height/2);
         coolTime = 0;
     }
+
+    
     
     void Update()
     {
@@ -30,6 +33,13 @@ public class Arma : MonoBehaviour
             //teste de colisão do tiro
             if(Physics.Raycast(raio, out hit, distTiro))
             {
+                if(hit.transform.gameObject.CompareTag("Enemy")){
+                    Inimigo enemyHealth = hit.transform.gameObject.GetComponent<Inimigo>();
+                    if (enemyHealth != null) {
+                    enemyHealth.TakeDamage(dano);
+                    
+                }
+
                 if(hit.transform.gameObject.CompareTag("latinha"))
                 {
                     Rigidbody rb = hit.transform.gameObject.GetComponent<Rigidbody>();                 
@@ -53,5 +63,6 @@ public class Arma : MonoBehaviour
             }
         }
         
+    }
     }
 }

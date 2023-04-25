@@ -5,17 +5,27 @@ using UnityEngine;
 public class Inimigo : MonoBehaviour
 {
     public int vida;
+    public int vidaMaxima=3;
     public GameObject morrer;
     void Start()
     {
-        vida = 5;
+        vida = vidaMaxima;
     }
 
     // Update is called once per frame
-    void Morrer(){
-        if(vida >= 0){
-            GameObject.Destroy(morrer);
+
+
+    public void TakeDamage(int dano) {  
+        vida -= dano;
+        Debug.Log(vida);
+        if (vida <= 0) {
+            Morrer();
         }
-    } 
+    }
+    void Morrer(){
+        
+            GameObject.Destroy(morrer);
+    }
+    
     }
 
