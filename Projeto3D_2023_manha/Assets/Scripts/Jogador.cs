@@ -13,18 +13,34 @@ public class Jogador : MonoBehaviour
     {
         
     }
+    private void OnCollisionEnter(Collision col){
+        if(col.gameObject.CompareTag("Enemy"))
+        {
+        vida -= 50;
+        print(vida);
+        }
 
-    void OnTriggerEnter(Collider col)
-    {
+        if(vida <= 0)
+        print("morreu");
         if(col.gameObject.CompareTag("tiro"))
         {
-            vida -= 10;
-            print(vida);
+        vida -= 10;
+        print(vida);
         }
 
         if(vida <= 0)
             print("morreu");
+
     }
+    void OnTriggerEnter(Collider col)
+    {
+
+        
+
+        
+    }
+
+    
 
     // Update is called once per frame
     void Update()

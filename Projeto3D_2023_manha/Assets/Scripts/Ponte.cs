@@ -9,7 +9,7 @@ public class Ponte : MonoBehaviour
     public bool abrindo;
     public float velocidade; 
     public float velLerp;  
-    public GameObject obstaculo;
+    
     
     public void MudarDirecao()
     {
@@ -24,7 +24,7 @@ public class Ponte : MonoBehaviour
         if(abrindo)
         {
             transform.position = Vector3.MoveTowards(transform.position, aberta, passo);
-            obstaculo.SetActive(false);
+            
         }
         else
         {

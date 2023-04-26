@@ -1144,6 +1144,7 @@ GameObject:
   - component: {fileID: 900193900}
   - component: {fileID: 900193899}
   - component: {fileID: 900193903}
+  - component: {fileID: 900193904}
   m_Layer: 0
   m_Name: obst
   m_TagString: Untagged
@@ -1171,7 +1172,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900193898}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1222,7 +1223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900193898}
   m_LocalRotation: {x: -0, y: -0.07428304, z: -0, w: 0.9972372}
-  m_LocalPosition: {x: 116.07, y: 15.29, z: 27.88}
+  m_LocalPosition: {x: 116.08, y: 14.41, z: 27.42}
   m_LocalScale: {x: 9.203205, y: 1.3059, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1245,6 +1246,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &900193904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900193898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20adee843742a264aa846f26b6f23d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetoDesativado: {fileID: 900193898}
 --- !u!1 &921925938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,7 +1274,7 @@ GameObject:
   - component: {fileID: 921925943}
   m_Layer: 0
   m_Name: ponte
-  m_TagString: Untagged
+  m_TagString: Ponte
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -1360,7 +1374,6 @@ MonoBehaviour:
   abrindo: 0
   velocidade: 3
   velLerp: 1
-  obstaculo: {fileID: 900193898}
 --- !u!1 &954990947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,7 +1762,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1159406909}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -1902,7 +1915,7 @@ GameObject:
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!195 &1285926669
 NavMeshAgent:

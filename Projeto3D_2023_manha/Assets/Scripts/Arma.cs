@@ -39,6 +39,12 @@ public class Arma : MonoBehaviour
                     enemyHealth.TakeDamage(dano);
                     
                 }
+                else{
+                    Vector3 pos = hit.point + hit.normal/100;
+                    Quaternion rot = Quaternion.FromToRotation(marca.transform.forward, hit.normal);
+                    GameObject furo = Instantiate(marca, pos, rot);
+                    Destroy(furo, 5);
+                }
 
                 if(hit.transform.gameObject.CompareTag("latinha"))
                 {
